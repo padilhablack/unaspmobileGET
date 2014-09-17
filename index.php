@@ -15,13 +15,33 @@ and open the template in the editor.
         <script>
 
 //TESTE login 
+            $(document).ready(function() {
+                $.get("http://www.unasp-ec.com/unaspserver/login.php?ra=86539&senha=9886", function(data){
+                    $("#result").html(data);
+                    alert("Load was performed.");
+                });
+
+
+
+//TESTE Curso
 //            $(document).ready(function() {
-//                $.get("http://www.unasp-ec.com/unaspserver/login.php?ra=86539&senha=9886", function(data){
+//                $.get("http://www.unasp-ec.com/unaspserver/curso.php?ra=86539", function(data) {
 //                    $("#result").html(data);
 //                    alert("Load was performed.");
 //                });
-//
-//            });
+
+
+
+//                $.get("http://www.unasp-ec.com/unaspserver/periodo.php?ra=86539&curso=800", function(data) {
+//                    $("#result").html(data);
+//                    alert("Load was performed.");
+//                });
+//                
+                
+                
+                
+                
+            });
 
 
         </script>
