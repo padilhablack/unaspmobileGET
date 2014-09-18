@@ -47,10 +47,10 @@ and open the template in the editor.
 //                });
 
 //DISCIPLINA
-//                  $.get("http://www.unasp-ec.com/unaspserver/notas/disciplina.php?ra=86539&curso=800&ano=2014&periodo=1&turma=5A800", function(data) {
-//                    $("#result").html(data);
-//                    alert("Load was performed.");
-//                });
+                  $.get("http://www.unasp-ec.com/unaspserver/notas/disciplina.php?ra=86539&curso=800&ano=2014&periodo=1&turma=5A800", function(data) {
+                    $("#result").html(data);
+                    alert("Load was performed.");
+                });
 //                
             });
 

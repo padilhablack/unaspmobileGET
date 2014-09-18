@@ -35,5 +35,3 @@ for ($i = 0; $i < count($disciplina); $i++) {
       $encodedArray = array_map(utf8_encode, $mostrar);
     echo(json_encode($encodedArray) . '</br>');
 }
-
-  
