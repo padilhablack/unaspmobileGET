@@ -1,6 +1,9 @@
 <?php
 
-include './classes/Database.php';
+include '../classes/Database.php';
+//
+//$raGET = 86539 ;
+//$cursoGet = 800;
 
 $raGET = $_GET['ra'] ;
 $cursoGet = $_GET['curso'];
@@ -12,7 +15,23 @@ $sql = mssql_query("SELECT DISTINCT PLCMCA.ANO_LETIVO, supervisor.PERIODO.DES_PE
 $periodos = array();
 
 while ($row = @mssql_fetch_assoc($sql)) {
-      $periodos[] = $row;
+    $periodos[] = array(
+        'ANO_LETIVO' => $row['ANO_LETIVO'],
+        'DES_PERIODO' => $row['DES_PERIODO'],
+        'CURSOANOPERIODO' => $row['CURSOANOPERIODO'],
+        'ANODESPERIODO' => $row['ANODESPERIODO']
+    );
 }
-echo(json_encode($periodos).'</br>');
+
+for ($i = 0; $i < count($periodos); $i++) {
+    $mostrar = array(
+        'ANO_LETIVO' => $periodos[$i]['ANO_LETIVO'],
+        'DES_PERIODO' => $periodos[$i]['$DES_PERIODO'],
+        'CURSOANOPERIODO' => $periodos[$i]['CURSOANOPERIODO'],
+        'ANODESPERIODO' => $periodos[$i]['ANODESPERIODO'],
+    );
+
+    $encodedArray = array_map(utf8_encode, $mostrar);
+    echo(json_encode($encodedArray) . '</br>');
+}
 ?>

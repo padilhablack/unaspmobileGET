@@ -14,40 +14,48 @@ and open the template in the editor.
     <body>
         <script>
 
-//TESTE login 
+//LOGIN 
             $(document).ready(function() {
-                $.get("http://www.unasp-ec.com/unaspserver/login.php?ra=86539&senha=9886", function(data){
-                    $("#result").html(data);
-                    alert("Load was performed.");
-                });
-
-
-
-//TESTE Curso
-//            $(document).ready(function() {
-//                $.get("http://www.unasp-ec.com/unaspserver/curso.php?ra=86539", function(data) {
+                
+//                $.get("http://www.unasp-ec.com/unaspserver/login.php?ra=86539&senha=9886", function(data) {
 //                    $("#result").html(data);
 //                    alert("Load was performed.");
 //                });
 
 
 
-//                $.get("http://www.unasp-ec.com/unaspserver/periodo.php?ra=86539&curso=800", function(data) {
+//CURSO
+// 
+//                $.get("http://www.unasp-ec.com/unaspserver/notas/curso.php?ra=86539", function(data) {
+//                    $("#result").html(data);
+//                    alert("Load was performed.");
+//                });
+
+
+
+//PERIODO          
+//                $.get("http://www.unasp-ec.com/unaspserver/notas/periodo.php?ra=86539&curso=800", function(data) {
 //                    $("#result").html(data);
 //                    alert("Load was performed.");
 //                });
 //                
-                
-                
-                
-                
+
+//TURMA         
+//                $.get("http://www.unasp-ec.com/unaspserver/notas/turma.php?ra=86539&curso=800&ano=2014&periodo=1", function(data) {
+//                    $("#result").html(data);
+//                    alert("Load was performed.");
+//                });
+
+//DISCIPLINA
+//                  $.get("http://www.unasp-ec.com/unaspserver/notas/disciplina.php?ra=86539&curso=800&ano=2014&periodo=1&turma=5A800", function(data) {
+//                    $("#result").html(data);
+//                    alert("Load was performed.");
+//                });
+//                
             });
 
 
         </script>
-
         <div id="result"></div>
-
-
     </body>
 </html>
