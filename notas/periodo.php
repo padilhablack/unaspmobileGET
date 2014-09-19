@@ -2,11 +2,11 @@
 
 include '../classes/Database.php';
 //
-//$raGET = 86539 ;
-//$cursoGet = 800;
+$raGET = 86539 ;
+$cursoGet = 800;
 
-$raGET = $_GET['ra'] ;
-$cursoGet = $_GET['curso'];
+//$raGET = $_GET['ra'] ;
+//$cursoGet = $_GET['curso'];
 
 $result = array('erro' => false);
 
@@ -15,20 +15,15 @@ $sql = mssql_query("SELECT DISTINCT PLCMCA.ANO_LETIVO, supervisor.PERIODO.DES_PE
 $periodos = array();
 
 while ($row = @mssql_fetch_assoc($sql)) {
-    $periodos[] = array(
-        'ANO_LETIVO' => $row['ANO_LETIVO'],
-        'DES_PERIODO' => $row['DES_PERIODO'],
-        'CURSOANOPERIODO' => $row['CURSOANOPERIODO'],
-        'ANODESPERIODO' => $row['ANODESPERIODO']
-    );
+    $periodos[] = $row;
 }
 
 for ($i = 0; $i < count($periodos); $i++) {
     $mostrar = array(
-        'ANO_LETIVO' => $periodos[$i]['ANO_LETIVO'],
-        'DES_PERIODO' => $periodos[$i]['$DES_PERIODO'],
-        'CURSOANOPERIODO' => $periodos[$i]['CURSOANOPERIODO'],
-        'ANODESPERIODO' => $periodos[$i]['ANODESPERIODO'],
+        'ano_letivo' => $periodos[$i]['ANO_LETIVO'],
+        'nome_periodo' => $periodos[$i]['$DES_PERIODO'],
+        'id_periodo' => $periodos[$i]['CURSOANOPERIODO'],
+        'descricao' => $periodos[$i]['ANODESPERIODO'],
     );
 
     $encodedArray = array_map(utf8_encode, $mostrar);
